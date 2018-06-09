@@ -2,6 +2,8 @@
 #include <iomanip>
 using namespace std;
 
+//PT -- 20/20
+
 int main()
 {
 	int size;
@@ -18,6 +20,7 @@ int main()
 		arrayPtr[i] = temp;
 		avg = avg+temp;
 	}
+	//PT -- don't need (double) here, since avg is a double already
 	avg = (double)avg / size;
 	cout << "The average is: " << avg << endl;
 	int abvAvg=0;
