@@ -20,6 +20,7 @@ Rectangle2d::Rectangle2d(double x, double y, double width, double length)
 	(*this).width = width;
 	(*this).length = length;
 	topAxis = (y + (length / 2));		//working with the edges of the squares is much easier
+	                                        //PT -- true, but you need to maintain these when setX, setY are called.
 	leftAxis = (x - (width / 2));
 	bottomAxis = (y - (length / 2));
 	rightAxis = (x + (width / 2));
