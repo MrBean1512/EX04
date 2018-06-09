@@ -2,6 +2,8 @@
 #include "Course.h"
 using namespace std;
 
+//16/20
+
 Course::Course(const string& courseName, int capacity)
 {
 	numberOfStudents = 0;
@@ -25,6 +27,16 @@ void Course::addStudent(const string& name, const Course& course)
 	if (numberOfStudents == capacity)
 	{
 		capacity = capacity + 5;
+		//PT -- instead of creating a new course (which won't work the way you'd like), just reallocate students
+		// -2
+		/*
+		string* temp = new string[capacity];
+		for (int i=0; i<numberOfStudents; i++) {
+			temp[i] = students[i];
+		}
+		delete[] students;
+		students = temp;
+		*/
 		Course newCourse(course);
 		delete &course;
 	}
@@ -63,4 +75,12 @@ Course::Course(const Course& course)		//homework specification
 	numberOfStudents = course.numberOfStudents;
 	capacity = course.capacity;
 	students = new string[capacity];
+	
+	//PT -- copy the students from course to this
+	// -2
+	/*
+	for (int i=0; i<course.getNumberOfStudents(); i++) {
+		students[i] = course.getStudents()[i];
+	}
+	*/
 }
