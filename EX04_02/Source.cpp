@@ -1,6 +1,8 @@
 #include <iostream>
 using namespace std;
 
+// 19/20
+
 int *doubleCapacity(const int *list, int size);
 
 int main()
@@ -17,6 +19,8 @@ int main()
 	cout << "Doubling size of list and adding the next five alphanumeric values..." << endl;
 
 	int *newList;
+	//PT -- don't do this, since you'll overwrite the value in the next statement.
+	// -1
 	newList = new int[size*2];
 	newList = doubleCapacity(list, size);
 	delete list;
@@ -35,6 +39,7 @@ int *doubleCapacity(const int *list, int size)
 	temp = new int[size*2];
 	for (int i = 0; i < size; i++)
 		temp[i] = list[i];
+	//PT -- don't really need to do this. Just leave the second half of the array alone.
 	for (int i = size; i < size*2; i++)
 		temp[i] = (list[i-size]+size);
 	return temp;
